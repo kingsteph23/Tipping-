@@ -18,23 +18,37 @@ public class tipping {
         double as = 0.15;
         double es = 0.20;
 
+
+        // tips based on service
+        String[] servicetips = {"Tipping guide" +
+                "\n*Note, depends on quality of service" +
+                "\n•Waiters/waitress-" +
+                "\n•Hairstylist/Barber- 15-20%" +
+                "\n•Uber/Taxi Driver-20%" +
+                "\n•Food Delivery-10-15%" +
+                "\n•Mani/Pedicure-15%" +
+                "\n•Dog Groomer-15-20%" +
+                "\n•Bar Tender-20%($1 for a reg drink/$2 for fancy drink)" +
+                "\n•Car Washer-15-20%($2-$5)" +
+                "\n•Babysitter/Nanny(20%)" +
+                "\n•Valet Parking($2-$5 each time car is picked)" +
+                "\n•Door Man($1-$2)" +
+                "\n•Room Service(15-20%)" +
+                "\n•Barista($1 if service is good)" +
+                "\n•Room Service-15-20% if no surcharge "};
+        // titre
+
+        System.out.println("---------------------");
+        System.out.println("Tipping Calculator\uD83D\uDCB5\uD83E\uDE99");
+        System.out.println("----------------------");
+
       // full bill
 
-        System.out.println("What is your current bill?:");
+        System.out.println("What is your current bill?:$");
         double bill = scan.nextDouble();
         scan.nextLine();
         System.out.println();
 
-        // asking if there are people in your party
-
-        System.out.println("Is there anyone in your party?:" +
-                "\nyes" +
-                "\nno" +
-                "\n:");
-        String partygroup = scan.nextLine();
-
-        if(partygroup.equals("no")) {
-            // tip
             System.out.println("How would you rate the service?:" +
                     "\nPoor Service" +
                     "\nAverage Service" +
@@ -61,23 +75,15 @@ public class tipping {
                 System.out.println("Due to the fact you believe.... that the service was excellent. " +
                         "\nYou have to tip 20% of the bill" +
                         "\nYou must tip :$" + conversion.format(es * bill));
+
             }
 
-            // for groups(more than 1 person)
-        }if (partygroup.equals("yes")){
-            System.out.println("How many people are in your party?:");
+        System.out.println();
+        // tips based on service
 
-            int partysize = scan.nextInt();
-
-
-
+        System.out.println(Arrays.toString(servicetips));
 
         }
 
-
-
-
-
-      
     }
-}
+
