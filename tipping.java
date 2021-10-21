@@ -42,47 +42,94 @@ public class tipping {
         System.out.println("Tipping Calculator\uD83D\uDCB5\uD83E\uDE99");
         System.out.println("----------------------");
 
+        System.out.println("Are you in the US or EU?" +
+                "\nEU" +
+                "\nUS" +
+                "\n:");
+        String location = scan.nextLine();
       // full bill
+if (location.equals("US")) {
+    System.out.println("What is your current bill?:$");
+    double bill = scan.nextDouble();
+    scan.nextLine();
+    System.out.println();
 
-        System.out.println("What is your current bill?:$");
-        double bill = scan.nextDouble();
-        scan.nextLine();
-        System.out.println();
+    System.out.println("How would you rate the service?:" +
+            "\nPoor Service" +
+            "\nAverage Service" +
+            "\nExcellent Service" +
+            "\n:");
 
+    System.out.println();
+    String service = scan.nextLine();
+
+// tip for poor service
+    if (service.equals("Poor Service")) {
+        System.out.println("Due to the fact you believe.... that the  service was poor.  " +
+                "\nYou have to tip 10% of the bill" +
+                "\nYou must tip:$" + conversion.format(ps * bill));
+
+        // tip for average service
+    } else if (service.equals("Average Service")) {
+        System.out.println("Due to the fact you believe.... that the service was average." +
+                "\nYou have to tip 15% of the bill" +
+                "\nYou must tip:$" + conversion.format(as * bill));
+        //tips for excellent service
+
+    } else if (service.equals("Excellent Service")) {
+        System.out.println("Due to the fact you believe.... that the service was excellent. " +
+                "\nYou have to tip 20% of the bill" +
+                "\nYou must tip :$" + conversion.format(es * bill));
+
+    }
+
+    System.out.println();
+    // tips based on service
+    System.out.println(Arrays.toString(servicetips));
+
+
+    // if player is in/from EU(European Union)
+            }if(location.equals("EU")){
+    // eu location
+            System.out.println("What is your current bill?:€");
+            double bill2 = scan.nextDouble();
+            scan.nextLine();
+            System.out.println();
+// rating service (eu)
             System.out.println("How would you rate the service?:" +
                     "\nPoor Service" +
                     "\nAverage Service" +
                     "\nExcellent Service" +
                     "\n:");
-
+// rating service(poor,average,excellent)(€)
             System.out.println();
-            String service = scan.nextLine();
+            String service2 = scan.nextLine();
 
-// tip for poor service
-            if (service.equals("Poor Service")) {
+            double ps2 = 0 ;
+            double as2 = 0.05;
+            double es2 = 0.10;
+            // tip for poor service(€)
+            if (service2.equals("Poor Service")) {
                 System.out.println("Due to the fact you believe.... that the  service was poor.  " +
-                        "\nYou have to tip 10% of the bill" +
-                        "\nYou must tip:$" + conversion.format(ps * bill));
+                        "\nYou have to tip 0% of the bill" +
+                        "\nYou must tip:€" + conversion.format(ps2 * bill2));
 
-                // tip for average service
-            } else if (service.equals("Average Service")) {
+                // tip for average service(€)
+            } else if (service2.equals("Average Service")) {
                 System.out.println("Due to the fact you believe.... that the service was average." +
-                        "\nYou have to tip 15% of the bill" +
-                        "\nYou must tip:$" + conversion.format(as * bill));
-                //tips for excellent service
+                        "\nYou have to tip 5% of the bill" +
+                        "\nYou must tip:€" + conversion.format(as2 * bill2));
+                //tips for excellent service(€)
 
-            } else if (service.equals("Excellent Service")) {
+            } else if (service2.equals("Excellent Service")) {
                 System.out.println("Due to the fact you believe.... that the service was excellent. " +
-                        "\nYou have to tip 20% of the bill" +
-                        "\nYou must tip :$" + conversion.format(es * bill));
+                        "\nYou have to tip 10% of the bill" +
+                        "\nYou must tip :€" + conversion.format(es2 * bill2));
 
             }
 
-        System.out.println();
-        // tips based on service
 
-        System.out.println(Arrays.toString(servicetips));
-
+        }
         }
 
     }
